@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buat CV Profesional - AI CV Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body class="bg-gray-50">
+    <!-- Progress Bar -->
+    <div class="sticky top-0 z-50 bg-white shadow-sm">
+      <div class="max-w-5xl mx-auto px-4 py-4">
+        <div class="flex items-center justify-between mb-2">
+          <h1 class="text-xl font-bold text-gray-900">Buat CV Profesional (Powered by Gemini AI 2.5 Flash)</h1>
+        </div>
+    
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 py-8">
+      <!-- Import Options -->
+
+      <form id="cvForm" class="space-y-8">
+        <!-- Section 1: Data Personal -->
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-user text-white"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900">Data Personal</h2>
+          </div>
+
+         
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Nama Lengkap *</label
+              >
+              <input
+                type="text"
+                id="fullName"
+                placeholder="John Doe"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Profesi / Job Title *</label
+              >
+              <input
+                type="text"
+                id="jobTitle"
+                placeholder="Software Engineer"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Email *</label
+              >
+              <input
+                type="email"
+                id="email"
+                placeholder="john@example.com"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Nomor Telepon *</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                placeholder="+62 812 3456 7890"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >LinkedIn</label
+              >
+              <input
+                type="url"
+                id="linkedin"
+                placeholder="linkedin.com/in/johndoe"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Portfolio / Website</label
+              >
+              <input
+                type="url"
+                id="portfolio"
+                placeholder="johndoe.com"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Tempat, Tanggal Lahir *</label
+              >
+              <input
+                type="text"
+                id="location"
+                placeholder="Jakarta, 23 November 1990"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Ringkasan Profil (Opsional)</label
+              >
+              <textarea
+                id="summary"
+                rows="4"
+                placeholder="AI akan membuat ringkasan profesional jika dikosongkan..."
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              ></textarea>
+              <p class="text-xs text-gray-500 mt-1">
+                <i class="fas fa-lightbulb text-yellow-500"></i> Tips: Kosongkan
+                jika ingin AI yang membuatkan
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Pendidikan -->
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center"
+              >
+                <i class="fas fa-graduation-cap text-white"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-900">Pendidikan</h2>
+            </div>
+            <button
+              type="button"
+              onclick="addEducation()"
+              class="text-purple-600 hover:text-purple-700 font-semibold flex items-center gap-2"
+            >
+              <i class="fas fa-plus-circle"></i> Tambah
+            </button>
+          </div>
+
+          <div id="educationList" class="space-y-4"></div>
+        </div>
+
+        <!-- Section 3: Pengalaman Kerja -->
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center"
+              >
+                <i class="fas fa-briefcase text-white"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-900">Pengalaman Kerja</h2>
+            </div>
+            <button
+              type="button"
+              onclick="addExperience()"
+              class="text-purple-600 hover:text-purple-700 font-semibold flex items-center gap-2"
+            >
+              <i class="fas fa-plus-circle"></i> Tambah
+            </button>
+          </div>
+
+          <div id="experienceList" class="space-y-6"></div>
+        </div>
+
+        <!-- Section 4: Skills -->
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-code text-white"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900">Skills & Keahlian</h2>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Tambah Skill</label
+              >
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  id="skillInput"
+                  placeholder="Contoh: Python, Leadership, Public Speaking"
+                  class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                />
+                <button
+                  type="button"
+                  onclick="addSkill()"
+                  class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold"
+                >
+                  <i class="fas fa-plus mr-2"></i>Tambah
+                </button>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">
+                Pisahkan dengan koma untuk menambah beberapa skill sekaligus
+              </p>
+            </div>
+
+            <div id="skillsList" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+
+       
+
+        <!-- Section 6: Preferensi CV -->
+        <div
+          class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl shadow-lg p-8 text-white"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 bg-white/20 backdrop-blur rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-sliders-h text-white"></i>
+            </div>
+            <h2 class="text-2xl font-bold">Preferensi & Kustomisasi</h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Template Style -->
+            <div>
+              <label class="block text-sm font-semibold mb-3"
+                >Pilih Template Desain</label
+              >
+              <div class="grid grid-cols-3 gap-3">
+                <label class="relative cursor-pointer">
+                  <input
+                    type="radio"
+                    name="template"
+                    value="minimal"
+                    class="peer hidden"
+                  />
+                  <div
+                    class="bg-white/20 backdrop-blur border-2 border-white/30 peer-checked:border-yellow-400 peer-checked:bg-white/30 rounded-lg p-4 text-center transition"
+                  >
+                    <i class="fas fa-align-left text-2xl mb-2"></i>
+                    <p class="text-xs font-semibold">Minimal</p>
+                  </div>
+                </label>
+                <label class="relative cursor-pointer">
+                  <input
+                    type="radio"
+                    name="template"
+                    value="modern"
+                    class="peer hidden"
+                    checked
+                  />
+                  <div
+                    class="bg-white/20 backdrop-blur border-2 border-white/30 peer-checked:border-yellow-400 peer-checked:bg-white/30 rounded-lg p-4 text-center transition"
+                  >
+                    <i class="fas fa-th-large text-2xl mb-2"></i>
+                    <p class="text-xs font-semibold">Modern</p>
+                  </div>
+                </label>
+                <label class="relative cursor-pointer">
+                  <input
+                    type="radio"
+                    name="template"
+                    value="creative"
+                    class="peer hidden"
+                  />
+                  <div
+                    class="bg-white/20 backdrop-blur border-2 border-white/30 peer-checked:border-yellow-400 peer-checked:bg-white/30 rounded-lg p-4 text-center transition"
+                  >
+                    <i class="fas fa-palette text-2xl mb-2"></i>
+                    <p class="text-xs font-semibold">Creative</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- ATS Friendly -->
+            <div>
+              <label class="block text-sm font-semibold mb-3">Format CV</label>
+              <div class="space-y-2">
+                <label
+                  class="flex items-center gap-3 bg-white/20 backdrop-blur rounded-lg p-4 cursor-pointer border-2 border-white/30 hover:border-white/50 transition"
+                >
+                  <input
+                    type="radio"
+                    name="ats"
+                    value="ats"
+                    class="w-5 h-5 text-yellow-400"
+                    checked
+                  />
+                  <div>
+                    <p class="font-semibold">ATS-Friendly</p>
+                    <p class="text-xs text-purple-100">
+                      Optimal untuk sistem recruiter
+                    </p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Tone -->
+            <div>
+              <label class="block text-sm font-semibold mb-3"
+                >Gaya Bahasa</label
+              >
+              <select
+                id="tone"
+                class="w-full px-4 py-3 text-black backdrop-blur border-2 border-white/30 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+              >
+                <option value="formal">Formal & Profesional</option>
+                <option value="casual">Santai & Friendly</option>
+                <option value="technical">Teknis & Detail</option>
+              </select>
+            </div>
+
+            <!-- Language -->
+            <div>
+              <label class="block text-sm font-semibold mb-3">Bahasa CV</label>
+              <select
+                id="language"
+                class="w-full px-4 py-3  text-black backdrop-blur border-2 border-white/30 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+              >
+                <option value="id">Bahasa Indonesia</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex flex-col sm:flex-row gap-4">
+  <button
+    type="submit"
+    class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl font-bold text-lg hover:shadow-2xl transition transform hover:scale-105 flex items-center justify-center gap-2"
+  >
+    <i class="fas fa-magic"></i>
+    Generate CV dengan AI
+  </button>
+
+  <a 
+    href="/" 
+    class="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl flex items-center justify-center gap-2 transition transform hover:scale-105"
+  >
+    <i class="fas fa-arrow-left"></i>
+    Back
+  </a>
+</div>
+
+      </form>
+
+      <div class="mt-4 mb-4 flex justify-end">
+        
+        <button
+          id="downloadBtn"
+          class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-lg"
+          style="display: none"
+        >
+          <i class="fas fa-download"></i> Download PDF
+        </button>
+      </div>
+
+      <div
+        id="cvPreview"
+        class="border bg-white p-4 rounded-lg min-h-[300px]"
+      ></div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+      function collectFormData() {
+        return {
+          personal: {
+            fullName: document.getElementById("fullName").value.trim(),
+            jobTitle: document.getElementById("jobTitle").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            phone: document.getElementById("phone").value.trim(),
+            linkedin: document.getElementById("linkedin").value.trim(),
+            portfolio: document.getElementById("portfolio").value.trim(),
+            location: document.getElementById("location").value.trim(),
+            summary: document.getElementById("summary").value.trim(),
+          },
+          preferences: {
+            template:
+              document.querySelector('input[name="template"]:checked')?.value ||
+              "modern",
+            ats:
+              document.querySelector('input[name="ats"]:checked')?.value ||
+              "yes",
+            tone: document.getElementById("tone").value || "professional",
+            language: document.getElementById("language").value || "id",
+          },
+          education: getEducationData(),
+          experience: getExperienceData(),
+          skills: getSkillsData(),
+          portfolioLinks: getPortfolioData(),
+          certificates: getCertificatesData(),
+        };
+      }
+
+      document
+        .getElementById("cvForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          // Matikan tombol saat loading
+          const submitBtn = document.querySelector(
+            '#cvForm button[type="submit"]'
+          );
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `
+                <i class="fas fa-spinner fa-spin"></i> Membuat CV...
+            `;
+
+          try {
+            const data = collectFormData();
+            console.log("Data dikirim ke backend:", data);
+
+            if (!data.personal.fullName || !data.personal.email) {
+              alert("Nama lengkap dan email wajib diisi.");
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = "Buat CV Sekarang";
+              return;
+            }
+
+            const response = await fetch("/generate", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok || result.error) {
+              alert(
+                "Gagal membuat CV: " + (result.error || "Terjadi kesalahan.")
+              );
+            } else {
+              const preview = document.getElementById("cvPreview");
+
+              if (preview) {
+                preview.innerHTML = `
+                        <h2 class="text-xl font-bold mb-2">CV ${data.personal.fullName}</h2>
+                        <pre class="whitespace-pre-wrap bg-gray-100 p-4 rounded-lg">${result.cv}</pre>
+                    `;
+
+                // Tampilkan tombol download
+                const downloadBtn = document.getElementById("downloadBtn");
+                downloadBtn.style.display = "block";
+                window.generatedCV = result.cv;
+                window.generatedName = data.personal.fullName;
+              } else {
+                alert("CV berhasil dibuat!");
+              }
+            }
+          } catch (err) {
+            console.error("Error jaringan atau JS:", err);
+            alert("Terjadi kesalahan koneksi atau server.");
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "Buat CV Sekarang";
+          }
+        });
+
+      document
+        .getElementById("downloadBtn")
+        .addEventListener("click", async () => {
+          if (!window.generatedCV) return alert("Belum ada CV untuk diunduh.");
+
+          const response = await fetch("/download-pdf", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: window.generatedName,
+              content: window.generatedCV,
+            }),
+          });
+
+          if (!response.ok) {
+            console.error("Gagal mengunduh PDF : "+ response.statusText);
+            return;
+          }
+
+          // Ambil file blob & paksa download
+          const blob = await response.blob();
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `cv_${window.generatedName.replace(/\s+/g, "_")}.pdf`;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+{{ define "content" }}
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-magic text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white">AI CV Builder</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-white hover:text-purple-300 transition">Fitur</a>
+                    <a href="#how-it-works" class="text-white hover:text-purple-300 transition">Cara Kerja</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white space-y-6">
+                    <div class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
+                        ✨ Powered by Gemini AI • 100% Gratis
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+                        Buat CV Profesional dengan <span class="text-yellow-300">AI</span> dalam Hitungan Menit
+                    </h1>
+                    <p class="text-xl text-purple-100">
+                        Tidak perlu design skill. AI kami akan membantu Anda membuat CV yang menarik perhatian recruiter dan meningkatkan peluang diterima kerja.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="/cv" target="_BLANK" class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-100 transition transform hover:scale-105 shadow-2xl">
+                            <i class="fas fa-rocket mr-2"></i>Buat CV Sekarang
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block animate-float">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-pink-500 rounded-3xl blur-3xl opacity-50"></div>
+                        <div class="relative bg-white p-8 rounded-3xl shadow-2xl">
+                            <div class="space-y-4">
+                                <div class="h-4 bg-gradient-to-r from-purple-400 to-pink-400 rounded w-3/4"></div>
+                                <div class="h-4 bg-gray-200 rounded w-full"></div>
+                                <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+                                <div class="grid grid-cols-2 gap-4 pt-4">
+                                    <div class="h-20 bg-purple-100 rounded-lg"></div>
+                                    <div class="h-20 bg-pink-100 rounded-lg"></div>
+                                </div>
+                                <div class="h-4 bg-gray-200 rounded w-full"></div>
+                                <div class="h-4 bg-gray-200 rounded w-4/5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Kenapa Pilih AI CV Builder?</h2>
+                <p class="text-xl text-gray-600">Teknologi AI terdepan untuk hasil maksimal</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Smart Content</h3>
+                    <p class="text-gray-600">AI kami menganalisis dan mengoptimalkan konten CV Anda agar lebih menarik dan profesional sesuai industri.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Instan & Mudah</h3>
+                    <p class="text-gray-600">Buat CV profesional dalam 5 menit. Cukup masukkan data, AI kami akan mengurus sisanya.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-download text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Export Fleksibel</h3>
+                    <p class="text-gray-600">Download CV Anda dalam format PDF berkualitas tinggi, siap dikirim ke recruiter kapan saja.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-language text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Multi Bahasa</h3>
+                    <p class="text-gray-600">Buat CV dalam Bahasa Indonesia dan Inggris dengan kualitas penulisan profesional.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Aman & Private</h3>
+                    <p class="text-gray-600">Data Anda tersimpan dengan aman. Kami menghormati privasi Anda dan tidak akan membagikan informasi pribadi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Cara Kerjanya Super Mudah</h2>
+                <p class="text-xl text-gray-600">3 langkah untuk CV profesional Anda</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-4xl font-bold text-white">1</span>
+                        </div>
+                        <div class="hidden md:block absolute top-1/2 left-3/4 w-full h-1 bg-gradient-to-r from-purple-300 to-pink-300 -z-10"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Masukkan Data</h3>
+                    <p class="text-gray-600">Isi informasi dasar Anda seperti pengalaman kerja, pendidikan, dan skill. AI akan memandu Anda.</p>
+                </div>
+                <div class="text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-4xl font-bold text-white">2</span>
+                        </div>
+                        <div class="hidden md:block absolute top-1/2 left-3/4 w-full h-1 bg-gradient-to-r from-blue-300 to-cyan-300 -z-10"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Bekerja</h3>
+                    <p class="text-gray-600">AI kami akan mengoptimalkan konten, memilih template terbaik, dan menyusun CV yang menarik.</p>
+                </div>
+                <div class="text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-4xl font-bold text-white">3</span>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Download & Lamar</h3>
+                    <p class="text-gray-600">Review hasilnya, edit jika perlu, dan download CV Anda. Siap untuk melamar pekerjaan impian!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-600 to-pink-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Siap Membuat CV Profesional Anda?
+            </h2>
+            <p class="text-xl text-purple-100 mb-8">
+                Bergabunglah dengan ribuan pencari kerja yang sudah berhasil mendapatkan pekerjaan impian mereka
+            </p>
+            <a href="/cv" target="_BLANK" class="bg-white text-purple-600 px-12 py-4 rounded-full font-bold text-xl hover:bg-purple-100 transition transform hover:scale-105 shadow-2xl">
+                <i class="fas fa-rocket mr-2"></i>Mulai Buat CV Gratis
+            </a>
+            <p class="text-purple-200 mt-4">✨ Tidak perlu kartu kredit • 100% Gratis selamanya</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-magic text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">AI CV Builder</span>
+                    </div>
+                    <p class="text-gray-400">Buat CV profesional dengan bantuan AI dalam hitungan menit.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Produk</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Fitur</a></li>
+                        <li><a href="#" class="hover:text-white transition">Template</a></li>
+                        <li><a href="#" class="hover:text-white transition">Harga</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Bantuan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition">Kontak</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tutorial</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 AI CV Builder. All rights reserved. Made with ❤️ for Hackathon</p>
+            </div>
+        </div>
+    </footer>
+
+
+{{ end }}
